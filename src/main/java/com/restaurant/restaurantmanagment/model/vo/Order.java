@@ -27,7 +27,7 @@ public class Order {
 
  @ManyToOne
     @JoinColumn(name = "table_id")
-    private Table table;
+    private RestaurantTable table;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderDetail> details; 

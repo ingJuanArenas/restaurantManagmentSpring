@@ -14,5 +14,7 @@ public class DishRequest {
     @NotNull
     @Positive
     private Double price;
+
+    private Boolean available;
 }
 

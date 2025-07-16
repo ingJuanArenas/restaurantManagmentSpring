@@ -1,0 +1,22 @@
+### 
+
+POST http://localhost:8080/api/dishes
+Content-Type: application/json
+
+ {
+    "name": "Spaghetti Bolognese",
+    "price": 22000.0,
+    "available": true
+  }
+
+###
+  
+GET http://localhost:8080/api/dishes/search?text=Spaghetti
+
+###
+
+DELETE http://localhost:8080/api/dishes/3
+
+###
+
+GET http://localhost:8080/api/dishes

@@ -1,0 +1,56 @@
+package com.restaurant.restaurantmanagment.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.restaurant.restaurantmanagment.model.dto.request.DishRequest;
+import com.restaurant.restaurantmanagment.model.dto.responses.DishResponse;
+import com.restaurant.restaurantmanagment.service.impl.DishServiceImpl;
+
+import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+
+
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/api")
+public class DishController {
+    
+    private final DishServiceImpl ds;
+
+    @GetMapping("/dishes")
+    public List<DishResponse> getAllDishes() {
+        return ds.getAllDishes();
+    }
+    @GetMapping("/dishes/search")
+    public List<DishResponse> getDish(@RequestParam String text) {
+        return ds.getDish(text);
+    }
+
+    @PostMapping("/dishes")
+    public DishResponse saveNewDish(@RequestBody DishRequest dr) {
+        return ds.saveNewDish(dr);
+    }
+
+
+    @DeleteMapping("/dishes/{id}")
+    public void deleteDish(@PathVariable Long id) {
+        ds.deleteDish(id);
+    }
+
+    
+
+    
+}
