@@ -1,22 +1,25 @@
 ### 
-
-POST http://localhost:8080/api/dishes
-Content-Type: application/json
-
- {
-    "name": "Spaghetti Bolognese",
-    "price": 22000.0,
-    "available": true
-  }
-
-###
   
 GET http://localhost:8080/api/dishes/search?text=Spaghetti
-
 ###
-
-DELETE http://localhost:8080/api/dishes/3
-
-###
-
+# Obtener todos los platos
 GET http://localhost:8080/api/dishes
+
+###
+GET http://localhost:8080/api/dishes/search?text=pollo
+
+###
+# Crear un nuevo plato
+POST http://localhost:8080/api/dishes
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Pizza Margarita",
+  "price": 25000.0,
+  "available": true
+}
+
+###
+# Eliminar un plato por ID
+DELETE http://localhost:8080/api/dishes/6

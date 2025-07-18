@@ -9,6 +9,7 @@ import com.restaurant.restaurantmanagment.model.dto.responses.DishResponse;
 import com.restaurant.restaurantmanagment.model.vo.Dish;
 import com.restaurant.restaurantmanagment.repository.DishRepository;
 import com.restaurant.restaurantmanagment.service.ServiceDAO;
+import com.restaurant.restaurantmanagment.utils.mappers.DishMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,47 +19,30 @@ import lombok.RequiredArgsConstructor;
 public class DishServiceImpl extends ServiceDAO <Dish,DishRequest,DishResponse> {
 
     private final DishRepository dr;
-
+    private final DishMapper dm;
     @Override
-    public List<DishResponse> getAllDishes() {
-        return dr.findAll().stream().map(this::toResponse).toList();
+    public List<DishResponse> getAll() {
+        return dr.findAll().stream().map(dm::toResponse).toList();
     }
 
     @Override
-    public List<DishResponse> getDish(String name) {
-        return dr.getAllByName('%'+name+'%').stream().map(this::toResponse).toList();
+    public List<DishResponse> get(String name) {
+        return dr.getAllByName('%'+name+'%').stream().map(dm::toResponse).toList();
     }
 
     @Override
-    public DishResponse saveNewDish(DishRequest rq) {
-        var entity= toEntity(rq);
+    public DishResponse saveNew(DishRequest rq) {
+        var entity= dm.toEntity(rq);
         var newDish = dr.save(entity);
 
-        return toResponse(newDish);
+        return dm.toResponse(newDish);
     }
 
     @Override
-    public void deleteDish(Long id) {
+    public void delete(Long id) {
         dr.deleteById(id);
     }
 
-    @Override
-    public DishResponse toResponse(Dish dish) {
-        var response = new DishResponse();
-        response.setId(dish.getId());
-        response.setName(dish.getName());
-        response.setPrice(dish.getPrice());
-        response.setAvailable(dish.getAvailable());
-        return response;
-    }
 
-    @Override
-    public Dish toEntity(DishRequest rq) {
-        var entity = new Dish();
-        entity.setName(rq.getName());
-        entity.setPrice(rq.getPrice());
-        entity.setAvailable(rq.getAvailable());
-        return entity;
-    }
 
 }

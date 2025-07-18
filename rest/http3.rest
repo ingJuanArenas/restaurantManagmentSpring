@@ -1,0 +1,16 @@
+GET http://localhost:8080/api/tables
+###
+POST http://localhost:8080/api/tables
+Content-Type: application/json
+
+{
+  "seats": 14,
+  "available": true
+}
+
+###
+GET http://localhost:8080/api/tables/4
+
+
+###
+DELETE http://localhost:8080/api/tables/1

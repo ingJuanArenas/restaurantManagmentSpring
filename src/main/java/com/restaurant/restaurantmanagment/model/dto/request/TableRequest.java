@@ -7,7 +7,10 @@ import lombok.Data;
 
 @Data
 public class TableRequest {
+
     @NotNull
-    private Integer number;
+    private int seats;
+    @NotNull
+    private boolean available;
 }
 

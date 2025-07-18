@@ -13,4 +13,5 @@ public class OrderRequest {
 
     @NotNull
     private List<OrderDetailRequest> details;
+
 }

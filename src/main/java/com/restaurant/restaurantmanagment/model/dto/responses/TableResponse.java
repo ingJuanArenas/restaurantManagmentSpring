@@ -8,5 +8,5 @@ import lombok.Data;
 public class TableResponse {
     private Long id;
     private Integer seats;
-    private Boolean avaliable;
+    private Boolean available;
 }

@@ -32,22 +32,22 @@ public class DishController {
 
     @GetMapping("/dishes")
     public List<DishResponse> getAllDishes() {
-        return ds.getAllDishes();
+        return ds.getAll();
     }
     @GetMapping("/dishes/search")
     public List<DishResponse> getDish(@RequestParam String text) {
-        return ds.getDish(text);
+        return ds.get(text);
     }
 
     @PostMapping("/dishes")
     public DishResponse saveNewDish(@RequestBody DishRequest dr) {
-        return ds.saveNewDish(dr);
+        return ds.saveNew(dr);
     }
 
 
     @DeleteMapping("/dishes/{id}")
     public void deleteDish(@PathVariable Long id) {
-        ds.deleteDish(id);
+        ds.delete(id);
     }
 
     

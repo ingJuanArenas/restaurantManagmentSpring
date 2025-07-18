@@ -25,7 +25,7 @@ public class RestaurantTable {
     Long id;
     @Column(nullable = false)
     int seats;
-    Boolean avaliable;
+    Boolean available;
      @OneToMany(mappedBy = "table", cascade = CascadeType.ALL)
     private List<Order> orders;
 

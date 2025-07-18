@@ -1,0 +1,32 @@
+###
+# Obtener todas las órdenes
+GET http://localhost:8080/api/orders
+
+###
+# Obtener una orden por ID
+GET http://localhost:8080/api/orders
+
+###
+# Crear una nueva orden
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "tableId": 2,
+  "details": [
+    {
+      "dishId": 9,
+      "quantity": 4
+    },
+    {
+      "dishId": 8,
+      "quantity": 5
+    }
+  ]
+}
+
+
+
+###
+DELETE http://localhost:8080/api/orders/4
+
