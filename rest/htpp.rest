@@ -1,6 +1,7 @@
 ### 
   
-GET http://localhost:8080/api/dishes/search?text=Spaghetti
+GET http://localhost:8080/api/dishes/search?text=Bolognese
+
 ###
 # Obtener todos los platos
 GET http://localhost:8080/api/dishes

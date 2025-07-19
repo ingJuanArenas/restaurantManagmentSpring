@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.restaurant.restaurantmanagment.exceptions.NotFoundException;
 import com.restaurant.restaurantmanagment.model.dto.request.OrderDetailRequest;
 import com.restaurant.restaurantmanagment.model.dto.request.OrderRequest;
 import com.restaurant.restaurantmanagment.model.dto.responses.OrderResponse;
@@ -37,11 +38,16 @@ public class OrderServiceImpl extends ServiceDAO<Order,OrderRequest,OrderRespons
 
     public List<OrderResponse> get(String date) {
         var parsedDate = LocalDate.parse(date);
-       return or.getAllByDate(parsedDate).stream().map(om::toResponse).toList();
+        var orders=or.getAllByDate(parsedDate);
+        if (orders.isEmpty()) {
+            throw new NotFoundException("No se encuentran datos para la fecha: "+date);
+        }
+       return orders.stream().map(om::toResponse).toList();
     }
 
     public void delete(Long id) {
-        or.deleteById(id);
+        var entity = or.findById(id).orElseThrow(() -> new NotFoundException("La orden con id: "+id+" no existe"));
+        or.delete(entity);
     }
 
     @Override

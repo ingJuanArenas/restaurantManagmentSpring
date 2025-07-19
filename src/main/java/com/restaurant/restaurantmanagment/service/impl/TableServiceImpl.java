@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.restaurant.restaurantmanagment.exceptions.NotFoundException;
 import com.restaurant.restaurantmanagment.model.dto.request.TableRequest;
 import com.restaurant.restaurantmanagment.model.dto.responses.TableResponse;
 import com.restaurant.restaurantmanagment.repository.TableRepository;
@@ -24,10 +25,9 @@ public class TableServiceImpl {
 
   
     public TableResponse get(Long id) {
-        var response = tr.findById(id).orElseThrow(() -> new RuntimeException("Mesa con ID " + id + " no encontrada."));;
+        var response = tr.findById(id).orElseThrow(()-> new NotFoundException("No se encuentra la mesa con el id: "+id));
         return tm.toResponse(response);
     }
-
   
     public TableResponse saveNew(TableRequest rq) {
         var entity= tm.toEntity(rq);
@@ -37,7 +37,8 @@ public class TableServiceImpl {
 
   
     public void delete(Long id) {
-        tr.deleteById(id);
+        var entity = tr.findById(id).orElseThrow(() -> new NotFoundException("La mesa con id: "+id+" no existe"));
+        tr.delete(entity);
     }
     
 }

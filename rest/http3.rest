@@ -9,8 +9,8 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/tables/4
+GET http://localhost:8080/api/tables/8
 
 
 ###
-DELETE http://localhost:8080/api/tables/1
+DELETE http://localhost:8080/api/tables/8

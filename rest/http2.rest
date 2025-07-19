@@ -4,7 +4,7 @@ GET http://localhost:8080/api/orders
 
 ###
 # Obtener una orden por ID
-GET http://localhost:8080/api/orders
+GET http://localhost:8080/api/orders/search?text=2025-07-19
 
 ###
 # Crear una nueva orden
@@ -15,12 +15,12 @@ Content-Type: application/json
   "tableId": 2,
   "details": [
     {
-      "dishId": 9,
-      "quantity": 4
+      "dishId": 8,
+      "quantity": 2
     },
     {
-      "dishId": 8,
-      "quantity": 5
+      "dishId": 5,
+      "quantity": 2
     }
   ]
 }
