@@ -1,25 +1,28 @@
 ###
 # Obtener todas las órdenes
 GET http://localhost:8080/api/orders
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
 ###
 # Obtener una orden por ID
 GET http://localhost:8080/api/orders/search?text=2025-07-19
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
 ###
 # Crear una nueva orden
 POST http://localhost:8080/api/orders
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
 {
-  "tableId": 2,
+  "tableId": 3,
   "details": [
     {
       "dishId": 8,
       "quantity": 2
     },
     {
-      "dishId": 5,
+      "dishId": 4,
       "quantity": 2
     }
   ]
@@ -28,5 +31,6 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8080/api/orders/4
+DELETE http://localhost:8080/api/orders/20
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
