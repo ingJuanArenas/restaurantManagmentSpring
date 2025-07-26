@@ -1,6 +1,8 @@
 GET http://localhost:8080/api/tables
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 ###
 POST http://localhost:8080/api/tables
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 Content-Type: application/json
 
 {
@@ -9,8 +11,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/tables/8
+GET http://localhost:8080/api/tables/2
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
 
 ###
-DELETE http://localhost:8080/api/tables/8
+DELETE http://localhost:8080/api/tables/2
+Authorization: Basic YWRtaW46YWRtaW5wYXNz

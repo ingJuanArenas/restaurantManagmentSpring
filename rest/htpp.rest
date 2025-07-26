@@ -1,18 +1,22 @@
+
 ### 
   
 GET http://localhost:8080/api/dishes/search?text=Bolognese
-
+Authorization: Basic bWFyaWE6Y29udHJhc2XDsWExMjM=
 ###
 # Obtener todos los platos
 GET http://localhost:8080/api/dishes
+Authorization: Basic anVhbjoxMjM0NTY=
 
 ###
 GET http://localhost:8080/api/dishes/search?text=pollo
+Authorization: Basic anVhbjoxMjM0NTY=
 
 ###
 # Crear un nuevo plato
 POST http://localhost:8080/api/dishes
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
 Accept: application/json
 
 {
@@ -23,4 +27,5 @@ Accept: application/json
 
 ###
 # Eliminar un plato por ID
-DELETE http://localhost:8080/api/dishes/6
+DELETE http://localhost:8080/api/dishes/5
+Authorization: Basic YWRtaW46YWRtaW5wYXNz
