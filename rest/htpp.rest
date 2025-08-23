@@ -2,30 +2,27 @@
 ### 
   
 GET http://localhost:8080/api/dishes/search?text=Bolognese
-Authorization: Basic bWFyaWE6Y29udHJhc2XDsWExMjM=
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 # Obtener todos los platos
 GET http://localhost:8080/api/dishes
-Authorization: Basic anVhbjoxMjM0NTY=
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 GET http://localhost:8080/api/dishes/search?text=pollo
-Authorization: Basic anVhbjoxMjM0NTY=
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 # Crear un nuevo plato
 POST http://localhost:8080/api/dishes
 Content-Type: application/json
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
-Accept: application/json
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-HswAccept: application/json
 
 {
-  "name": "Pizza Margarita",
-  "price": 25000.0,
+  "name": "Hamburguesa Mexicana",
+  "price": 23000.0,
   "available": true
 }
 
 ###
 # Eliminar un plato por ID
-DELETE http://localhost:8080/api/dishes/5
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
+DELETE http://localhost:8080/api/dishes/9
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw

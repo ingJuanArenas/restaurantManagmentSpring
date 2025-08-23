@@ -1,8 +1,8 @@
 GET http://localhost:8080/api/tables
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 POST http://localhost:8080/api/tables
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 Content-Type: application/json
 
 {
@@ -11,10 +11,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/tables/2
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
+GET http://localhost:8080/api/tables/10
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 
 
 ###
-DELETE http://localhost:8080/api/tables/2
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
+DELETE http://localhost:8080/api/tables/12
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw

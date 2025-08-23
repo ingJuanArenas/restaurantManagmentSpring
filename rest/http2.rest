@@ -1,19 +1,16 @@
 ###
 # Obtener todas las órdenes
 GET http://localhost:8080/api/orders
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 # Obtener una orden por ID
 GET http://localhost:8080/api/orders/search?text=2025-07-19
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 ###
 # Crear una nueva orden
 POST http://localhost:8080/api/orders
 Content-Type: application/json
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
 {
   "tableId": 3,
   "details": [
@@ -32,5 +29,4 @@ Authorization: Basic YWRtaW46YWRtaW5wYXNz
 
 ###
 DELETE http://localhost:8080/api/orders/20
-Authorization: Basic YWRtaW46YWRtaW5wYXNz
-
+Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaWF0IjoxNzU1OTYyMjM4LCJleHAiOjE3NTYwNDg2Mzh9.Czp0_eF7iRPeFWNb0_udEd0qN1Ie19TG8cP1V6fZG-f2XKDbVZucit54JarAxKN1SQCv49brXiKvZMsc-9-Hsw
