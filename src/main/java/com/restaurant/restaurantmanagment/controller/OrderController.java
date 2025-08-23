@@ -29,13 +29,13 @@ public class OrderController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/orders")  
-      @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     public List<OrderResponse> getAllOrders() {
         return os.getAll();
     }
 
     @ResponseStatus(HttpStatus.OK)
-      @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     @GetMapping("/orders/search")
     public List<OrderResponse> getOrder(@RequestParam String text) {
         return os.get(text);
@@ -43,7 +43,7 @@ public class OrderController {
 
 
     @ResponseStatus(HttpStatus.CREATED)
-      @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     @PostMapping("/orders")
     public OrderResponse saveNewOrder(@RequestBody OrderRequest dr) {
         return os.saveNew(dr);
@@ -51,7 +51,7 @@ public class OrderController {
 
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-  @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     @DeleteMapping("/orders/{id}")
     public void deleteOrder(@PathVariable Long id) {
         os.delete(id);

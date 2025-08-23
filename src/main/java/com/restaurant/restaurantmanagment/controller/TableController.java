@@ -38,20 +38,20 @@ public class TableController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @GetMapping()
     public List<TableResponse> getAll() {
         return ts.getAll();
     }
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     @GetMapping("/{id}")
     public TableResponse getById(@PathVariable Long id){
         return ts.get(id);
     }
     
 @ResponseStatus(HttpStatus.CREATED)
-  @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
      @PostMapping()
     public TableResponse saveNewTable(@RequestBody TableRequest tr) {
         return ts.saveNew(tr);
@@ -59,7 +59,7 @@ public class TableController {
 
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-      @PreAuthorize("hasAuthority('ADMIN')")
+      @PreAuthorize("hasRole('ADMIN') ")
     @DeleteMapping("/{id}")
     public void deleteTable(@PathVariable Long id) {
         ts.delete(id);

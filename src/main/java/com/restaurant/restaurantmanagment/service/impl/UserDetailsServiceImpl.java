@@ -28,8 +28,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         // Convierte los roles del usuario de tu entidad a GrantedAuthority
         // Spring Security espera GrantedAuthority, SimpleGrantedAuthority es una implementación común.
         var authorities = user.getRoles().stream()
-            .map(role -> new SimpleGrantedAuthority(role)) // Asumiendo que los roles son "ROLE_USER", "ROLE_ADMIN" etc.
-            .toList();
+        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+        .toList();
+
 
         // Construye y retorna un objeto UserDetails de Spring Security
         // La contraseña ya debe estar codificada en la DB

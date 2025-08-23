@@ -34,20 +34,20 @@ public class DishController {
 
 
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
+   @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @GetMapping("/dishes")
     public List<DishResponse> getAllDishes() {
         return ds.getAll();
     }
     @ResponseStatus(HttpStatus.OK)
-     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
+   @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @GetMapping("/dishes/search")
     public List<DishResponse> getDish(@RequestParam String text) {
         return ds.get(text);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') ")
     @PostMapping("/dishes")
     public DishResponse saveNewDish(@RequestBody DishRequest dr) {
         return ds.saveNew(dr);
@@ -55,7 +55,7 @@ public class DishController {
 
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/dishes/{id}")
     public void deleteDish(@PathVariable Long id) {
         ds.delete(id);
